@@ -36,18 +36,18 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Height must be more than 0", Toast.LENGTH_SHORT).show()
             } else if (heightOfUser >= 250) {
                 Toast.makeText(this, "Height must be less than 250", Toast.LENGTH_SHORT).show()
-            }
-            if (weightOfUser == 0.0) {
+            } else if (weightOfUser == 0.0) {
                 Toast.makeText(this, "Weight must be more than 0", Toast.LENGTH_SHORT).show()
             } else if (weightOfUser >= 250) {
                 Toast.makeText(this, "Weight must be less than 250", Toast.LENGTH_SHORT).show()
-            }
-            if (ageOfUser == 0) {
+            } else if (ageOfUser == 0) {
                 Toast.makeText(this, "Age must be more than 0", Toast.LENGTH_SHORT).show()
             } else if (ageOfUser >= 150) {
                 Toast.makeText(this, "Age must be less than 150", Toast.LENGTH_SHORT).show()
-            } else { val tmp = findViewById(R.id.textView) as TextView
-                var insideAge = lenOfUserName / 2 + heightOfUser % 11 * 5 + (weightOfUser.roundToInt() - 12) % 10 - ageOfUser % 4 + 10
+            } else {
+                val tmp = findViewById(R.id.textView) as TextView
+                var insideAge =
+                    lenOfUserName / 2 + heightOfUser % 11 * 5 + (weightOfUser.roundToInt() - 12) % 10 - ageOfUser % 4 + 10
                 tmp.setText("Ваш внутенний возраст $insideAge")
             }
         }
