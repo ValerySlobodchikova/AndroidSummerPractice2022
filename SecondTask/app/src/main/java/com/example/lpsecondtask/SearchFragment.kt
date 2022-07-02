@@ -13,7 +13,7 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
 
         val pref = activity?.getSharedPreferences("TEST", Context.MODE_PRIVATE) ?: return
         val value = pref.getString("PREF_TEXT", "").orEmpty()
-        val text = this.javaClass.name
+        val text = (this.javaClass.name).split(".")[3]
         pref.edit {
             putString("PREF_TEXT", text)
             commit()
