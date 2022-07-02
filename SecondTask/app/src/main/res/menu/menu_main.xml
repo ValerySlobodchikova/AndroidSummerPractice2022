@@ -3,27 +3,27 @@
     <item
         android:id="@+id/mainFragment"
         android:enabled="true"
-
+        android:icon="@drawable/ic_lightning"
         android:title="Main" />
     <item
         android:id="@+id/clipsFragment"
         android:enabled="true"
-
+        android:icon="@drawable/ic_diamond"
         android:title="Clips" />
     <item
         android:id="@+id/newsFragment"
         android:enabled="true"
-
+        android:icon="@drawable/ic_star"
         android:title="News" />
     <item
         android:id="@+id/notificationsFragment"
         android:enabled="true"
-
+        android:icon="@drawable/ic_heart_cards"
         android:title="Notifications" />
     <item
         android:id="@+id/searchFragment"
         android:enabled="true"
-
+        android:icon="@drawable/ic_heart"
         android:title="Search" />
 
 </menu>

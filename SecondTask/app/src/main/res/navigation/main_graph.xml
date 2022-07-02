@@ -22,25 +22,48 @@
         <action
             android:id="@+id/action_mainFragment_to_clipsFragment"
             app:destination="@id/clipsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_targetFragment"
+            app:destination="@id/targetFragment" />
     </fragment>
     <fragment
         android:id="@+id/clipsFragment"
         tools:layout="@layout/fragment_clips"
         android:name="com.example.lpsecondtask.ClipsFragment"
-        android:label="ClipsFragment" />
+        android:label="ClipsFragment" >
+        <action
+            android:id="@+id/action_clipsFragment_to_targetFragment"
+            app:destination="@id/targetFragment" />
+    </fragment>
     <fragment
         android:id="@+id/newsFragment"
         tools:layout="@layout/fragment_news"
         android:name="com.example.lpsecondtask.NewsFragment"
-        android:label="NewsFragment" />
+        android:label="NewsFragment" >
+        <action
+            android:id="@+id/action_newsFragment_to_targetFragment"
+            app:destination="@id/targetFragment" />
+    </fragment>
     <fragment
         android:id="@+id/notificationsFragment"
         tools:layout="@layout/fragment_notifications"
         android:name="com.example.lpsecondtask.NotificationsFragment"
-        android:label="NotificationsFragment" />
+        android:label="NotificationsFragment" >
+        <action
+            android:id="@+id/action_notificationsFragment_to_targetFragment"
+            app:destination="@id/targetFragment" />
+    </fragment>
     <fragment
         android:id="@+id/searchFragment"
         tools:layout="@layout/fragment_search"
         android:name="com.example.lpsecondtask.SearchFragment"
-        android:label="SearchFragment" />
+        android:label="SearchFragment" >
+        <action
+            android:id="@+id/action_searchFragment_to_targetFragment"
+            app:destination="@id/targetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/targetFragment"
+        android:name="com.example.lpsecondtask.TargetFragment"
+        android:label="TargetFragment" />
 </navigation>

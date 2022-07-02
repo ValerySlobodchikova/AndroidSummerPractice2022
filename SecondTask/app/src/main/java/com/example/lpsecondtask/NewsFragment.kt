@@ -6,21 +6,24 @@ import android.provider.Settings.Global.putString
 import android.view.View
 import androidx.core.content.edit
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.example.lpsecondtask.databinding.FragmentNewsBinding
 import com.google.android.material.snackbar.Snackbar
 
 class NewsFragment : Fragment(R.layout.fragment_news) {
+    private var _binding: FragmentNewsBinding? = null
+    private val binding get() = _binding!!
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val pref = activity?.getSharedPreferences("TEST", Context.MODE_PRIVATE) ?: return
-        val value = pref.getString("PREF_TEXT", "").orEmpty()
+        _binding = FragmentNewsBinding.bind(view)
         val text = (this.javaClass.name).split(".")[3]
-        pref.edit {
-            putString("PREF_TEXT", text)
-            commit()
+        with(binding) {
+            btnNews.setOnClickListener {
+                findNavController().navigate(
+                    R.id.action_newsFragment_to_targetFragment,
+                    TargetFragment.createBundle(text)
+                )
+            }
         }
-
-        if (!value.isEmpty())
-            Snackbar.make(view, value, Snackbar.LENGTH_SHORT).show()
     }
 }

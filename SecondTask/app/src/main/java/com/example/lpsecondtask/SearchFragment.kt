@@ -5,21 +5,25 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.content.edit
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.example.lpsecondtask.databinding.FragmentClipsBinding
+import com.example.lpsecondtask.databinding.FragmentSearchBinding
 import com.google.android.material.snackbar.Snackbar
 
 class SearchFragment : Fragment(R.layout.fragment_search) {
+    private var _binding: FragmentSearchBinding? = null
+    private val binding get() = _binding!!
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val pref = activity?.getSharedPreferences("TEST", Context.MODE_PRIVATE) ?: return
-        val value = pref.getString("PREF_TEXT", "").orEmpty()
+        _binding = FragmentSearchBinding.bind(view)
         val text = (this.javaClass.name).split(".")[3]
-        pref.edit {
-            putString("PREF_TEXT", text)
-            commit()
+        with(binding) {
+            btnSearch.setOnClickListener {
+                findNavController().navigate(
+                    R.id.action_searchFragment_to_targetFragment,
+                    TargetFragment.createBundle(text)
+                )
+            }
         }
-
-        if (!value.isEmpty())
-            Snackbar.make(view, value, Snackbar.LENGTH_SHORT).show()
     }
 }
