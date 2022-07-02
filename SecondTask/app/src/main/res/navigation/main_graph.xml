@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        tools:layout="@layout/fragment_main"
+        android:name="com.example.lpsecondtask.MainFragment"
+        android:label="MainFragment">
+        <action
+            android:id="@+id/action_mainFragment_to_newsFragment"
+            app:destination="@id/newsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_notificationsFragment"
+            app:destination="@id/notificationsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_clipsFragment"
+            app:destination="@id/clipsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/clipsFragment"
+        tools:layout="@layout/fragment_clips"
+        android:name="com.example.lpsecondtask.ClipsFragment"
+        android:label="ClipsFragment" />
+    <fragment
+        android:id="@+id/newsFragment"
+        tools:layout="@layout/fragment_news"
+        android:name="com.example.lpsecondtask.NewsFragment"
+        android:label="NewsFragment" />
+    <fragment
+        android:id="@+id/notificationsFragment"
+        tools:layout="@layout/fragment_notifications"
+        android:name="com.example.lpsecondtask.NotificationsFragment"
+        android:label="NotificationsFragment" />
+    <fragment
+        android:id="@+id/searchFragment"
+        tools:layout="@layout/fragment_search"
+        android:name="com.example.lpsecondtask.SearchFragment"
+        android:label="SearchFragment" />
+</navigation>
