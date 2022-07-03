@@ -32,15 +32,15 @@ class MainActivity : AppCompatActivity() {
                 (findViewById(R.id.editTextNumber3) as EditText).text.toString().toInt()
 
 
-            if (heightOfUser == 0) {
+            if (heightOfUser <= 0) {
                 Toast.makeText(this, "Height must be more than 0", Toast.LENGTH_SHORT).show()
             } else if (heightOfUser >= 250) {
                 Toast.makeText(this, "Height must be less than 250", Toast.LENGTH_SHORT).show()
-            } else if (weightOfUser == 0.0) {
+            } else if (weightOfUser <= 0.0) {
                 Toast.makeText(this, "Weight must be more than 0", Toast.LENGTH_SHORT).show()
             } else if (weightOfUser >= 250) {
                 Toast.makeText(this, "Weight must be less than 250", Toast.LENGTH_SHORT).show()
-            } else if (ageOfUser == 0) {
+            } else if (ageOfUser <= 0) {
                 Toast.makeText(this, "Age must be more than 0", Toast.LENGTH_SHORT).show()
             } else if (ageOfUser >= 150) {
                 Toast.makeText(this, "Age must be less than 150", Toast.LENGTH_SHORT).show()
