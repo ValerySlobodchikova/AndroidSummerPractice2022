@@ -11,18 +11,6 @@
         android:name="com.example.lpsecondtask.MainFragment"
         android:label="MainFragment">
         <action
-            android:id="@+id/action_mainFragment_to_newsFragment"
-            app:destination="@id/newsFragment" />
-        <action
-            android:id="@+id/action_mainFragment_to_searchFragment"
-            app:destination="@id/searchFragment" />
-        <action
-            android:id="@+id/action_mainFragment_to_notificationsFragment"
-            app:destination="@id/notificationsFragment" />
-        <action
-            android:id="@+id/action_mainFragment_to_clipsFragment"
-            app:destination="@id/clipsFragment" />
-        <action
             android:id="@+id/action_mainFragment_to_targetFragment"
             app:destination="@id/targetFragment" />
     </fragment>
